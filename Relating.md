@@ -48,7 +48,7 @@ __Foreign key__: Foreign keys are keys that refer to the primary key of another 
 __Composite key__: Candidate key consisting of more than one attribute.
 - ``NRIC`` & ``PhoneNumber`` in STUDENT which are the primary and secondary keys.
 
-## Normalisation forms
+## Normalisation process & forms
 1. UNF
 2. 1NF
 3. 2NF
