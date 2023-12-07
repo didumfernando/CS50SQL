@@ -36,15 +36,41 @@ SUBJECT (__SubjectID__, SubjectName)
 ```
 __Primary key__: A unique identifier in a table or set 
 - ``NRIC`` in STUDENT or ``NRIC & SubjectID`` in GRADE
+- Represented by an underline in table schema/specification questions.
 
 __Secondary key__: Candidate keys not used as primary keys
 - ``PhoneNumber`` in STUDENT
 
 __Foreign key__: Foreign keys are keys that refer to the primary key of another table (establish relationships between tables)
 - ``NRIC`` in GRADE (foreign key) references (primary key) ``NRIC`` in STUDENT
+- How to identify? : It is the common column --> whichever table does not reflect more info (foreign key) --> represented by ..... in schema/specification questions.
 
 __Composite key__: Candidate key consisting of more than one attribute.
 - ``NRIC`` & ``PhoneNumber`` in STUDENT which are the primary and secondary keys.
 
+## Normalisation forms
+1. UNF
+2. 1NF
+3. 2NF
+4. 3NF
 
-​
+### UNF
+- Repeating groups of attributes
+- Nested tables
+- Presence of duplicate rows
+= Increases the size of the database, reducing efficiency
+
+### 1NF (might have composite keys)
+- No duplicate rows / presence of non-atomic values
+- No nested tables
+- No repeating groups
+
+### 2NF
+- 1NF + no partial key dependencies
+- A partial key dependency is when a non-key depends on only part of a composite key
+- To eliminate partial-key dependency, if one key depends on the part of the key remove all the keys and place it in another table with the partial-key dependency keeping the dependent partial key in the original table as well.
+
+### 3NF
+- 2NF + no non-key dependencies
+- A non-key dependency is when a non-key is dependent on another non-key.
+- To eliminate non-key dependency, take out the entire non-key dependent on another non-key and place it in another table keeping the dependent non-key in the original table as well.
